@@ -1,0 +1,42 @@
+/**
+    @version: 1.1
+    @autor: Christian Wolff <chris@connye.com>
+    @description: CommonTS international
+*/
+
+### International setup
+
+# English 
+lib.commonTS.config_en < lib.commonTS.config
+
+# German/Germany
+lib.commonTS.config_de < lib.commonTS.config
+lib.commonTS.config_de {
+    language = de
+    locale_all = de_DE
+    htmlTag_langKey = de
+}
+
+# German/Austria
+lib.commonTS.config_de < lib.commonTS.config
+lib.commonTS.config_de {
+    language = de
+    locale_all = de_AT
+    htmlTag_langKey = de
+}
+
+# German/Swiss
+lib.commonTS.config_de < lib.commonTS.config
+lib.commonTS.config_de {
+    language = de
+    locale_all = de_CH
+    htmlTag_langKey = de
+}
+
+# Spanish
+lib.commonTS.config_es < lib.commonTS.config
+lib.commonTS.config_es {
+    language = es
+    locale_all = es_ES
+    htmlTag_langKey = es
+}

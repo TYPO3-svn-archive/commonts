@@ -1,0 +1,94 @@
+/**
+	@version: 1.4
+	@autor: Christian Wolff <chris@connye.com>
+	@description: CommonTS base TS file
+*/
+
+
+### Basic Configuration xhtml_transitional / en
+lib.commonTS.config {
+	doctype = xhtml_trans
+	xmlprologue = none
+	xhtml_cleaning = all
+	cache_clearAtMidnight = 1
+	language = en
+	locale_all = en_en
+	htmlTag_langKey = en-EN
+	uniqueLinkVars = 1
+	sendCacheHeaders = 1
+	meaningfulTempFilePrefix = 100
+	prefixLocalAnchors = all
+	spamProtectEmailAddresses = ascii
+	removeDefaultJS = 1
+}
+
+### Page Setting Dummy
+lib.commonTS.page = PAGE
+lib.commonTS.page {
+	typeNum = 0
+	removeDefaultJS = 1
+	bodyTagCObject = TEXT
+	bodyTagCObject.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{page:layout}">
+	bodyTagCObject.insertData = 1
+	meta.author.cObject = COA
+	meta.author.cObject {
+		10 = TEXT
+		10.data = page:author
+		10.required = 1
+		10.noTrimWrap = |"|" |
+		
+		20 = TEXT
+		20.data = page:author_email
+		20.required = 1
+		20.wrap = <|>
+	}
+	meta.keywords.data = page:keywords
+	meta.keywords.required = 1
+	meta.description.data = page:description
+	meta.description.required = 1
+	meta.abstract.data = page:abstract
+	meta.abstract.required = 1
+}
+
+### Standard ulMenu
+lib.commonTS.menu.ul = HMENU
+lib.commonTS.menu.ul {
+	1 = TMENU
+	1.wrap = <ul>|</ul>
+	1.target = _top
+	1.NO = 1
+	1.NO {
+		wrapItemAndSub = <li class="cts-first">|</li> |*| <li>|</li> |*| <li class="cts-last">|</li>
+		ATagTitle.field = abstract // description
+		stdWrap.htmlSpecialChars = 1
+	}
+	1.IFSUB .1.NO
+	1.IFSUB {
+		wrapItemAndSub = li class="cts-first cts-ifsub">|</li> |*| <li class="cts-ifsub">|</li> |*| <li class="cts-last cts-ifsub">|</li>
+	}
+	
+	1.CUR < .1.NO
+	1.CUR {
+		wrapItemAndSub = <li class="cts-first cts-cur">|</li> |*| <li class="cts-cur">|</li> |*| <li class="cts-last cts-cur">|</li>
+		ATagParams = class="cts-cur"
+	}
+	
+	1.CURIFSUB < .1.NO
+	1.CURIFSUB {
+		wrapItemAndSub = <li class="cts-first cts-ifsub cts-curifsub cts-cur">|</li> |*| <li class="cts-ifsub cts-curifsub cts-cur">|</li> |*| <li class="cts-last cts-ifsub cts-curifsub cts-cur">|</li>
+		ATagParams = class="cts-cur cts-curifsub"
+	}
+	
+	1.ACT < .1.NO
+	1.ACT {
+		wrapItemAndSub = <li class="cts-first cts-act">|</li> |*| <li class="cts-act">|</li> |*| <li class="cts-last cts-act">|</li>
+		ATagParams = class="cts-act"
+	}
+	
+	1.ACTIFSUB .1.NO
+	1.ACTIFSUB {
+		wrapItemAndSub = li class="cts-first cts-ifsub cts-actifsub cts-act">|</li> |*| <li class="cts-ifsub cts-actifsub cts-act">|</li> |*| <li class="cts-last cts-ifsub cts-actifsub cts-act">|</li>
+		ATagParams = class="cts-act cts-actifsub"
+	}
+}
+
