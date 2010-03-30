@@ -64,7 +64,7 @@ lib.commonTS.menu.ul {
 	}
 	1.IFSUB < .1.NO
 	1.IFSUB {
-		wrapItemAndSub = li class="cts-first cts-ifsub">|</li> |*| <li class="cts-ifsub">|</li> |*| <li class="cts-last cts-ifsub">|</li>
+		wrapItemAndSub = <li class="cts-first cts-ifsub">|</li> |*| <li class="cts-ifsub">|</li> |*| <li class="cts-last cts-ifsub">|</li>
 	}
 	
 	1.CUR < .1.NO
@@ -87,7 +87,7 @@ lib.commonTS.menu.ul {
 	
 	1.ACTIFSUB < .1.NO
 	1.ACTIFSUB {
-		wrapItemAndSub = li class="cts-first cts-ifsub cts-actifsub cts-act">|</li> |*| <li class="cts-ifsub cts-actifsub cts-act">|</li> |*| <li class="cts-last cts-ifsub cts-actifsub cts-act">|</li>
+		wrapItemAndSub = <li class="cts-first cts-ifsub cts-actifsub cts-act">|</li> |*| <li class="cts-ifsub cts-actifsub cts-act">|</li> |*| <li class="cts-last cts-ifsub cts-actifsub cts-act">|</li>
 		ATagParams = class="cts-act cts-actifsub"
 	}
 }
