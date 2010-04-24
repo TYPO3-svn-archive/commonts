@@ -26,7 +26,6 @@ lib.commonTS.config {
 lib.commonTS.page = PAGE
 lib.commonTS.page {
 	typeNum = 0
-	removeDefaultJS = 1
 	bodyTagCObject = TEXT
 	bodyTagCObject.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{page:layout}">
 	bodyTagCObject.insertData = 1
@@ -55,7 +54,6 @@ lib.commonTS.menu.ul = HMENU
 lib.commonTS.menu.ul {
 	1 = TMENU
 	1.wrap = <ul>|</ul>
-	1.target = _top
 	1.NO = 1
 	1.NO {
 		wrapItemAndSub = <li class="cts-first">|</li> |*| <li>|</li> |*| <li class="cts-last">|</li>
@@ -91,4 +89,20 @@ lib.commonTS.menu.ul {
 		ATagParams = class="cts-act cts-actifsub"
 	}
 }
+
+### Simple ulMenu no ifsub States
+lib.commonTS.menu.ulSimple < lib.commonTS.menu.ul
+lib.commonTS.menu.ulSimple.1 {
+	IFSUB >
+	CURIFSUB >
+	ACTIFSIB >
+}
+
+### Minimal ulMenu just th NO State
+lib.commonTS.menu.ulMinimal < lib.commonTS.menu.ulSimple
+lib.commonTS.menu.ulMinimal.1 {
+	ACT >
+	CUR >
+}
+
 
