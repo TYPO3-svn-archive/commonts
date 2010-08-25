@@ -95,7 +95,7 @@ lib.commonTS.menu.ulSimple < lib.commonTS.menu.ul
 lib.commonTS.menu.ulSimple.1 {
 	IFSUB >
 	CURIFSUB >
-	ACTIFSIB >
+	ACTIFSUB >
 }
 
 ### Minimal ulMenu just th NO State
