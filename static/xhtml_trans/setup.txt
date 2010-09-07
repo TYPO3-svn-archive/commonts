@@ -20,6 +20,8 @@ lib.commonTS.config {
 	prefixLocalAnchors = all
 	spamProtectEmailAddresses = ascii
 	removeDefaultJS = 1
+	renderCharset = utf-8
+	metaCharset = utf-8
 }
 
 ### Page Setting Dummy
