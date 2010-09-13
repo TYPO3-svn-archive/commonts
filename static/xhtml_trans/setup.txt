@@ -51,6 +51,13 @@ lib.commonTS.page {
 	meta.abstract.required = 1
 }
 
+[globalString=LIT:TemplaVoila]
+bodyTagCObject.value = <body id="cts-page-{TSFE:id}">
+[global]
+[globalString=LIT:ModernBE]
+bodyTagCObject.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{page:be_layout}">
+[global]
+
 ### Standard ulMenu
 lib.commonTS.menu.ul = HMENU
 lib.commonTS.menu.ul {

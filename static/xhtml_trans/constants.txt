@@ -1,0 +1,2 @@
+# cat=commonts/Page; type=options[classic, TemplaVoila, modernBE]; label=Template Modul
+plugin.tx_commonts.templateModule=classic
