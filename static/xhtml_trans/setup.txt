@@ -52,7 +52,7 @@ lib.commonTS.page {
 }
 
 [globalString=LIT:TemplaVoila]
-bodyTagCObject.value = <body id="cts-page-{TSFE:id}">
+bodyTagCObject.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{TSFE:page|tx_templavoila_ds}-{TSFE:page|tx_templavoila_to}">
 [global]
 [globalString=LIT:ModernBE]
 bodyTagCObject.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{page:be_layout}">
