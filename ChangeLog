@@ -1,5 +1,11 @@
 (add new changes on top of this file)
 
+11-05-10 Christian Wolff <chris@connye.com>
+	Version 1.0.3
+	Added language class to body tag. cts-lang-<int> 
+	now its possible to change background images in CSS
+	without switching stylesheets.
+	
 10-03-08 Christian Wolff  <chris@connye.com>
 
 	* Initial release
