@@ -63,11 +63,19 @@ lib.commonTS.page {
 	meta.abstract.required = 1
 }
 
-[globalString=LIT:TemplaVoila]
-bodyTagCObject.10.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{TSFE:page|tx_templavoila_ds}-{TSFE:page|tx_templavoila_to}
+[globalVar= LIT:TemplaVoila = {$plugin.tx_commonts.templateModule} ]
+lib.commonTS.page.bodyTagCObject.10.value = <body id="cts-page-{TSFE:id}" class="cts-layout-mode-tv cts-layout-{TSFE:page|tx_templavoila_ds}-{TSFE:page|tx_templavoila_to}
 [global]
-[globalString=LIT:ModernBE]
-bodyTagCObject.10.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{TSFE:selected_backend_layout}
+
+[globalVar= LIT:modernBE = {$plugin.tx_commonts.templateModule}]
+lib.commonTS.page.bodyTagCObject {
+  10.value = <body id="cts-page-{TSFE:id}" class="cts-layout-mode-mbe
+  
+  30 = TEXT
+  30.data = levelfield:-1,backend_layout_next_level,slide
+  30.override.field = backend_layout
+  30.noTrimWrap = | cts-layout-||
+}
 [global]
 
 ### Standard ulMenu
