@@ -1,5 +1,9 @@
 (add new changes on top of this file)
 
+12-01-02 Christian Wolff <chris@connye.com>
+	Version 1.0.5
+	Fixed "modern BE" Backend Layout modus
+
 11-05-10 Christian Wolff <chris@connye.com>
 	Version 1.0.3
 	Added language class to body tag. cts-lang-<int> 

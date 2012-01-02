@@ -67,7 +67,7 @@ lib.commonTS.page {
 bodyTagCObject.10.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{TSFE:page|tx_templavoila_ds}-{TSFE:page|tx_templavoila_to}
 [global]
 [globalString=LIT:ModernBE]
-bodyTagCObject.10.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{page:be_layout}
+bodyTagCObject.10.value = <body id="cts-page-{TSFE:id}" class="cts-layout-{TSFE:selected_backend_layout}
 [global]
 
 ### Standard ulMenu
