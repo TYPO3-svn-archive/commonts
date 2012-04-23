@@ -10,12 +10,13 @@ lib.commonTS.config {
 	doctype = xhtml_trans
 	xmlprologue = none
 	xhtml_cleaning = all
-	cache_clearAtMidnight = 1
-	language = en
-	locale_all = en_en
-	htmlTag_langKey = en-EN
+	cache_clearAtMidnight = {$plugin.tx_commonts.ConfigClearCacheAtMidnight}
+	language = {$plugin.tx_commonts.ConfigLanguage}
+	locale_all = {$plugin.tx_commonts.ConfigLocaleAll}
+	htmlTag_langKey = {$plugin.tx_commonts.ConfigLangKey}
 	uniqueLinkVars = 1
 	sendCacheHeaders = 1
+	typolinkCheckRootline = 1
 	meaningfulTempFilePrefix = 100
 	prefixLocalAnchors = all
 	spamProtectEmailAddresses = ascii
@@ -23,6 +24,10 @@ lib.commonTS.config {
 	renderCharset = utf-8
 	metaCharset = utf-8
 }
+
+[globalVar= LIT:1 = {$plugin.tx_commonts.predefineConfigObject} ]
+config < lib.commonTS.config
+[global]
 
 ### Page Setting Dummy
 lib.commonTS.page = PAGE
@@ -76,6 +81,10 @@ lib.commonTS.page.bodyTagCObject {
   30.override.field = backend_layout
   30.noTrimWrap = | cts-layout-||
 }
+[global]
+
+[globalVar= LIT:1 = {$plugin.tx_commonts.predefinePageObject} ]
+page < lib.commonTS.page
 [global]
 
 ### Standard ulMenu
@@ -134,4 +143,12 @@ lib.commonTS.menu.ulMinimal.1 {
 	CUR >
 }
 
+
+### css_styled_content tt_content Modifications 
+[globalVar= LIT:1 = {$plugin.tx_commonts.RemoveHtmlWrap}]
+tt_content.stdWrap.innerWrap.if {
+  value.field = CType
+  isInList = html
+  negate = 1
+}
 
